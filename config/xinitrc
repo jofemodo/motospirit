@@ -1,0 +1,10 @@
+#********************************************************************
+# MOTOSPIRIT PROJECT: MONITOR DISPLAY
+#--------------------------------------------------------------------
+# xinitrc: X11 Init Script
+#--------------------------------------------------------------------
+# Copyright (C) 2016 Fernando Moyano <jofemodo@zynthian.org>
+#********************************************************************
+
+# Init MotoSpirit Panel
+exec ~/motospirit/sbin/motospirit.sh
