@@ -95,7 +95,7 @@ class mspanel(QtGui.QMainWindow):
 		#self.canbus = CANopen.CANopen(self.canbus_interface)
 		self.canbus_timer = QtCore.QTimer()
 		self.canbus_timer.timeout.connect(self.canBusUpdater)
-		self.canbus_timer.start(20)
+		self.canbus_timer.start(200)
 
 	def canBusUpdater(self):
 		self.getCanBusValues()
@@ -184,7 +184,7 @@ class mspanel(QtGui.QMainWindow):
 			if msg.arbitration_id==0x222:
 				self.values['Tdriver']=self.parseDataInt8(msg.data,1)
 				self.values['RPM']=self.parseDataInt16(msg.data,4)
-				self.values['KMH']=0.02*self.values['RPM']
+				self.values['KMH']=0.037*self.values['RPM']
 			elif msg.arbitration_id==0x223:
 				self.values['Tengine']=self.parseDataInt16(msg.data,0)
 			#BMS PDOs
