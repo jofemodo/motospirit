@@ -95,7 +95,7 @@ class mspanel(QtGui.QMainWindow):
 		#self.canbus = CANopen.CANopen(self.canbus_interface)
 		self.canbus_timer = QtCore.QTimer()
 		self.canbus_timer.timeout.connect(self.canBusUpdater)
-		self.canbus_timer.start(200)
+		self.canbus_timer.start(20)
 
 	def canBusUpdater(self):
 		self.getCanBusValues()
