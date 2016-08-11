@@ -41,8 +41,8 @@ cp -f $MSDIR/config/xinitrc ~/.xsession
 #sudo systemctl enable asplashscreen
 
 # Make
-cd $MSDIR/src
-make
+#cd $MSDIR/src
+#make
 
 cd $MSDIR
 

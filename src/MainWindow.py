@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'MainWindow.ui'
 #
-# Created: Thu Aug 11 19:07:47 2016
+# Created: Thu Aug 11 19:24:25 2016
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -226,7 +226,7 @@ class Ui_MainWindow(object):
         self.label_KMH.setAlignment(QtCore.Qt.AlignCenter)
         self.label_KMH.setObjectName(_fromUtf8("label_KMH"))
         self.label_SOC_units = QtGui.QLabel(self.centralwidget)
-        self.label_SOC_units.setGeometry(QtCore.QRect(60, 410, 21, 31))
+        self.label_SOC_units.setGeometry(QtCore.QRect(60, 410, 31, 31))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.label_SOC_units.setFont(font)
