@@ -1,0 +1,41 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          asplashscreen
+# Required-Start:    mountdevsubfs mountall
+# Required-Stop:
+# Should-Start:      
+# Default-Start:     S
+# Default-Stop:
+# Short-Description: Show custom splashscreen
+# Description:       Show custom splashscreen
+### END INIT INFO
+
+#apt-get install fbi
+#chmod a+x /etc/init.d/asplashscreen
+#insserv /etc/init.d/asplashscreen
+
+do_start () {
+  if [ -c /dev/fb0 ]; then
+    cat /home/pi/motospirit/src/img/fb_motospirit.raw > /dev/fb0
+  fi  
+}
+
+case "$1" in
+  start|"")
+    do_start
+    ;;
+  restart|reload|force-reload)
+    echo "Error: argument '$1' not supported" >&2
+    exit 3
+    ;;
+  stop)
+    # No-op
+    ;;
+  status)
+    exit 0
+    ;;
+  *)
+    echo "Usage: asplashscreen [start|stop]" >&2
+    exit 3
+    ;;
+esac

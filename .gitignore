@@ -1,0 +1,8 @@
+*~
+doc/*
+log/*
+sd_images
+libcanopen
+python-can
+img/*.raw
+__pycache__
