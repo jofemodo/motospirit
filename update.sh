@@ -28,12 +28,12 @@ cd $MSDIR
 git pull
 
 # Install fonts
-sudo cp $MSDIR/src/fonts/* /usr/local/share/fonts
-sudo fc-cache -fv
+#sudo cp $MSDIR/src/fonts/* /usr/local/share/fonts
+#sudo fc-cache -fv
 
 # Copy xinitrc
-cp -f $MSDIR/sbin/xinitrc ~/.xinitrc
-cp -f $MSDIR/sbin/xinitrc ~/.xsession
+cp -f $MSDIR/config/xinitrc ~/.xinitrc
+cp -f $MSDIR/config/xinitrc ~/.xsession
 
 # Splash Screen
 #sudo cp -f $MSDIR/config/asplashscreen /etc/init.d/asplashscreen 

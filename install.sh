@@ -57,8 +57,8 @@ sudo fc-cache -fv
 sudo useradd -G video pi
 
 # Copy xinitrc
-cp -f $MSDIR/sbin/xinitrc ~/.xinitrc
-cp -f $MSDIR/sbin/xinitrc ~/.xsession
+cp -f $MSDIR/config/xinitrc ~/.xinitrc
+cp -f $MSDIR/config/xinitrc ~/.xsession
 
 # Splash Screen
 sudo cp -f $MSDIR/config/asplashscreen /etc/init.d/asplashscreen 
