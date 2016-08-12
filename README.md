@@ -1,5 +1,5 @@
 # MotoSpirit Display
-Display for [MotoSpirit Project] (https://motospirit.wordpress.com) based in RaspberryPi, CanBerry, CanBus, ...
+Display for [MotoSpirit Project] (https://motospirit.wordpress.com) using RaspberryPi, CanBerry, CanBus, ...
 
 The display show a panel with values of some variables taken from a CAN Bus using the CANBerry interface. 
 
