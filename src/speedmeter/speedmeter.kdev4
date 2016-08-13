@@ -1,0 +1,4 @@
+[Project]
+Name=speedmeter
+Manager=KDevCMakeManager
+VersionControl=kdevgit

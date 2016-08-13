@@ -30,12 +30,19 @@ from PyQt4 import QtGui
 from PyQt4 import QtCore
 import MainWindow
 
+from speedmeter import *
+from speedmeter.speedmeter import lib_speedmeter, lib_speedmeter_init
+
 class mspanel(QtGui.QMainWindow):
 
 	color_blue = "#0000ff"
 	color_green = "#00f000"
 	color_orange = "#f88000"
 	color_red = "#f00000"
+	
+	#SpeedMeter parameters
+	sm_gpio_pin = 0
+	sm_mpp = 1.0
 
 	canbus = None
 	canbus_interface = 'vcan0'
@@ -52,10 +59,17 @@ class mspanel(QtGui.QMainWindow):
 		self.ui.setupUi(self)
 		self.setInitValues()
 		self.initLogFile()
+		self.initSpeedMeter()
 		self.initCanBusUpdater()
 
 	def __del__(self):
 		self.logfd.close()
+
+	def initSpeedMeter(self):
+		try:
+			lib_speedmeter_init(self.sm_gpio_pin, self.sm_mpp)
+		except Exception as e:
+			print("ERROR initializing SpeedMeter: %s" % e)
 
 	def XsetInitValues(self):
 		self.values['RPM']=4869
@@ -173,18 +187,22 @@ class mspanel(QtGui.QMainWindow):
 	# Tmaxcell	=> 627.4 (1) => 2's complement
 	#------------------------------------	
 	def getCanBusValues(self):
+		#Read from RBPi GPIO Sensors
+		mps=speedmeter.get_speedmeter_value()
+		self.values['KMH']=int(3.6*mps)
+		#TODO: Send to CAN Bus
+		print("KMH => "+str(self.values['KMH']))
+
+		#Read from CAN Bus
 		while True:
 			msg = self.canbus.recv(0.0)
 			if msg is None: break
 			print("BusCan Message => " + str(msg))
-			#RBPi GPIO Sensors PDOs
-			if msg.arbitration_id==0x388:
-				self.values['KMH']=self.parseDataInt16(msg.data,0)
 			#Engine Driver PDOs
 			if msg.arbitration_id==0x222:
 				self.values['Tdriver']=self.parseDataInt8(msg.data,1)
 				self.values['RPM']=self.parseDataInt16(msg.data,4)
-				self.values['KMH']=0.037*self.values['RPM']
+				#self.values['KMH']=0.037*self.values['RPM']
 			elif msg.arbitration_id==0x223:
 				self.values['Tengine']=self.parseDataInt16(msg.data,0)
 			#BMS PDOs
