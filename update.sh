@@ -43,6 +43,11 @@ cp -f $MSDIR/config/xinitrc ~/.xsession
 # Make
 #cd $MSDIR/src
 #make
+cd $MSDIR/src/speedmeter
+mkdir build
+cd build
+cmake ..
+make
 
 cd $MSDIR
 
