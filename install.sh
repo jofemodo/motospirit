@@ -67,6 +67,11 @@ sudo systemctl enable asplashscreen
 # Make
 cd $MSDIR/src
 make
+cd $MSDIR/src/speedmeter
+mkdir build
+cd build
+cmake ..
+make
 
 cd $MSDIR
 
