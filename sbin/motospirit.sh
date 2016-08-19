@@ -59,7 +59,7 @@ function splash_motospirit_error() {
 # Main Program
 #------------------------------------------------------------------------------
 
-export CANDEV="can0"
+#export CANDEV="can0"
 
 cd $MOTOSPIRIT_DIR/src
 
@@ -71,7 +71,7 @@ unclutter -root -idle 0 &
 
 while true; do
 	# Start Motospirit Main Program
-	sudo ./mspanel.py
+	sudo -E ./mspanel.py
 	status=$?
 
 	# Proccess output status
