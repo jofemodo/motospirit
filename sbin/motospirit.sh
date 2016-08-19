@@ -59,6 +59,9 @@ function splash_motospirit_error() {
 # Main Program
 #------------------------------------------------------------------------------
 
+#CANDEV="vcan0"
+CANDEV="can0"
+
 cd $MOTOSPIRIT_DIR/src
 
 screensaver_off

@@ -1,6 +1,11 @@
 #!/bin/bash
 
-CANDEV="vcan0"
+if [ -z $1 ]; then
+  CANDEV="vcan0"
+else
+  CANDEV=$1
+fi
+
 TFRAME=0.2
 
 cansend $CANDEV 222#003400000505

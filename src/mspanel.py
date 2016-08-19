@@ -23,6 +23,7 @@
 #********************************************************************
 
 import sys
+import os
 import can
 import datetime
 #import pycanopen
@@ -57,6 +58,9 @@ class mspanel(QtGui.QMainWindow):
 		super(mspanel, self).__init__()
 		self.ui = MainWindow.Ui_MainWindow()
 		self.ui.setupUi(self)
+		#Configure CAN Bus Device
+		if os.environ.get('CANDEV'):
+			self.canbus_interface=os.environ.get('CANDEV')
 		self.setInitValues()
 		self.initLogFile()
 		self.initSpeedMeter()
