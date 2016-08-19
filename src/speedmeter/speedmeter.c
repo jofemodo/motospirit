@@ -75,7 +75,7 @@ void init_speedmeter(unsigned int pin, float mpp) {
 	sm_mpp=mpp;
 	sm_mps=0.0;
 	last_tsns=0;
-	last_dtns=1e19;
+	last_dtns=1e9;
 	
 	wiringPiSetup();
 	pinMode(sm_pin, INPUT);
