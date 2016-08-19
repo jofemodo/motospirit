@@ -61,13 +61,13 @@ function splash_motospirit_error() {
 
 cd $MOTOSPIRIT_DIR/src
 
-sudo xhost +
+xhost +
 screensaver_off
 scaling_governor_performance
 
 while true; do
 	# Start Motospirit Main Program
-	./mspanel.py
+	sudo ./mspanel.py
 	status=$?
 
 	# Proccess output status
