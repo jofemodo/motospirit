@@ -27,7 +27,7 @@ MSDIR=~/motospirit
 # Requirements ...
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install python3-pyqt4 pyqt4-dev-tools libcanberra-gtk0 mercurial automake m4 cmake can-utils joe tree fbi i2c-tools libi2c-dev
+sudo apt-get install python3-pyqt4 pyqt4-dev-tools libcanberra-gtk0 mercurial automake m4 cmake can-utils joe tree fbi unclutter i2c-tools libi2c-dev
 
 # Install python-can
 cd $MSDIR/src

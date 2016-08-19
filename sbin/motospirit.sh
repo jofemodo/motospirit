@@ -61,9 +61,11 @@ function splash_motospirit_error() {
 
 cd $MOTOSPIRIT_DIR/src
 
-xhost +
 screensaver_off
 scaling_governor_performance
+
+xhost +
+unclutter -root -idle 0 & 
 
 while true; do
 	# Start Motospirit Main Program
