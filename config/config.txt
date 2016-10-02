@@ -64,6 +64,8 @@ dtparam=spi=on
 #dtparam=audio=on
 
 # Enable CanBerry
-#dtoverlay=mcp2515-can0-overlay,oscillator=16000000,interrupt=22
-dtoverlay=mcp2515-can0,oscillator=16000000,interrupt=25 
+#dtoverlay=mcp2515-can0-overlay,oscillator=16000000,interrupt=25
+dtoverlay=mcp2515-can0,oscillator=16000000,interrupt=22 
+
 #dtoverlay=spi-bcm2835-overlay
+

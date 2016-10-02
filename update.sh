@@ -31,11 +31,19 @@ git pull
 #sudo cp $MSDIR/src/fonts/* /usr/local/share/fonts
 #sudo fc-cache -fv
 
+# Copy config.txt to /boot
+sudo cp -f $MSDIR/config/config.txt /boot
+
+# Copy files to /etc
+sudo cp -f $MSDIR/config/modules /etc
+sudo cp -f $MSDIR/config/rc.local /etc
+
 # Copy xinitrc
 cp -f $MSDIR/config/xinitrc ~/.xinitrc
 cp -f $MSDIR/config/xinitrc ~/.xsession
 
 # Splash Screen
+#$MSDIR/sbin/generate_fb_splash.sh
 #sudo cp -f $MSDIR/config/asplashscreen /etc/init.d/asplashscreen 
 #sudo ln -s /etc/init.d/asplashscreen /etc/rcS.d/S01asplashscreen
 #sudo systemctl enable asplashscreen
